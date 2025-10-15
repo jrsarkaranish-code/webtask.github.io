@@ -1,0 +1,68 @@
+/* General Body */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffc0cb, #ff6961);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Scanner Page */
+.scanner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+.scanner-bar {
+    width: 0%;
+    height: 5px;
+    background: white;
+    margin: 20px 0;
+    animation: scan 3s forwards;
+}
+@keyframes scan { 0% { width: 0%; } 100% { width: 100%; } }
+#status { font-size: 1.5em; margin-top: 20px; }
+
+/* Main Page */
+.main-container { text-align: center; padding: 20px; }
+.bear-container { display: flex; justify-content: center; gap: 50px; margin: 20px 0; }
+.bear { width: 150px; height: 150px; }
+.animate-bear { animation: float 3s infinite ease-in-out alternate; }
+@keyframes float { 0% { transform: translateY(0px); } 100% { transform: translateY(-20px); } }
+
+.hearts-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+
+.heart { position: absolute; width: 20px; height: 20px; background: red; transform: rotate(45deg); animation: floatHeart 4s linear infinite; }
+@keyframes floatHeart { 0% { transform: translateY(0) rotate(45deg); opacity: 1; } 100% { transform: translateY(-500px) rotate(45deg); opacity: 0; } }
+
+.message { background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 15px; max-width: 700px; margin: 20px auto; }
+.message h2 { font-size: 2em; margin-bottom: 10px; }
+.message p { font-size: 1.2em; line-height: 1.6em; }
+.photos img { width: 250px; height: 150px; border-radius: 15px; margin: 10px; }
+
+/* Button */
+.play-game button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.play-game button:hover {
+    background: #ff1a3c;
+    transform: scale(1.05);
+}
+
+/* Game Page */
+.game-container { text-align: center; padding: 20px; }
+#gameArea { position: relative; width: 80%; height: 400px; margin: 20px auto; background: rgba(255, 182, 193, 0.3); border: 2px solid white; border-radius: 15px; overflow: hidden; }
+#bear { position: absolute; bottom: 10px; width: 80px; height: 80px; background: url('bear1.png') no-repeat center/contain; left: 50%; transform: translateX(-50%); }
+.heart-fall { position: absolute; width: 30px; height: 30px; background: red; transform: rotate(45deg); }
